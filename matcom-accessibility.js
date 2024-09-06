@@ -124,3 +124,164 @@ window.onload = function() {
         contactMap.setAttribute("aria-label", "Location Map");
     };
 };
+
+ 
+ // Function to add "Error:" after </svg> but before the existing text
+function addErrorText() {
+    const errorElements = document.querySelectorAll('.form-field-error');
+
+    errorElements.forEach(element => {
+        // Check if the element contains an <svg> tag and not already has "Error:"
+        if (element.querySelector('svg') && !element.textContent.includes('Error:')) {
+            // Create a new text node with the text "Error: "
+            const errorTextNode = document.createTextNode(' Error: ');
+
+            // Find the SVG element
+            const svgElement = element.querySelector('svg');
+
+            // Insert the text node after the SVG element
+            element.insertBefore(errorTextNode, svgElement.nextSibling);
+        }
+    });
+}
+
+// Create a MutationObserver to watch for changes in the DOM
+const observer = new MutationObserver((mutationsList, observer) => {
+    for (let mutation of mutationsList) {
+        if (mutation.type === 'childList' || mutation.type === 'subtree') {
+            addErrorText(); // Call the function when changes are detected
+        }
+    }
+});
+
+// Start observing the entire document for changes
+observer.observe(document.body, {
+    childList: true, // Look for changes to child nodes
+    subtree: true,   // Observe all nodes, not just direct children
+});
+
+// Call the function initially to handle any existing .form-field-error elements
+addErrorText();
+  
+document.addEventListener('DOMContentLoaded', function () {
+  const menuItems = document.querySelectorAll('.header-nav-item > a');
+  let currentMenuIndex = 0;
+  let currentSubmenuIndex = -1;
+
+  // Function to close all submenus and set opacity to 0
+  function closeAllSubmenus() {
+    const allSubmenus = document.querySelectorAll('.header-nav-folder-content');
+    allSubmenus.forEach(submenu => {
+      submenu.style.opacity = '0';
+      submenu.style.pointerEvents = 'none';
+    });
+  }
+
+  // Function to set opacity of all nested submenus to 1
+  function setNestedSubmenusOpacity(submenu) {
+    const nestedSubmenus = submenu.querySelectorAll('.header-nav-folder-content');
+    nestedSubmenus.forEach(nested => {
+      nested.style.opacity = '1';
+      nested.style.pointerEvents = 'auto'; // Enable interaction if needed
+    });
+  }
+
+  // Function to show the submenu of the current item
+  function showSubmenu(item) {
+    closeAllSubmenus(); // Close other submenus
+    const submenu = item.parentElement.querySelector('.header-nav-folder-content');
+    if (submenu) {
+      submenu.style.opacity = '1'; // Ensure visibility of the selected submenu
+      submenu.style.pointerEvents = 'auto'; // Enable interaction
+      setNestedSubmenusOpacity(submenu); // Set opacity for nested submenus
+      currentSubmenuIndex = 0; // Reset submenu index
+      focusSubmenuItem(submenu, currentSubmenuIndex);
+    }
+  }
+
+  // Function to focus on a submenu item
+  function focusSubmenuItem(submenu, index) {
+    const submenuItems = submenu.querySelectorAll('.header-nav-folder-item > a');
+    if (submenuItems.length > 0 && index >= 0 && index < submenuItems.length) {
+      submenuItems[index].focus();
+    }
+  }
+
+  // Handle keyboard navigation
+  function handleKeydown(event) {
+    const currentItem = menuItems[currentMenuIndex];
+    const currentSubmenu = currentItem.parentElement.querySelector('.header-nav-folder-content');
+    const submenuItems = currentSubmenu ? currentSubmenu.querySelectorAll('.header-nav-folder-item > a') : [];
+
+    switch (event.key) {
+      case 'ArrowRight':
+        event.preventDefault();
+        if (currentMenuIndex < menuItems.length - 1) {
+          currentMenuIndex++;
+          currentSubmenuIndex = -1;
+          showSubmenu(menuItems[currentMenuIndex]);
+        }
+        break;
+
+      case 'ArrowLeft':
+        event.preventDefault();
+        if (currentMenuIndex > 0) {
+          currentMenuIndex--;
+          currentSubmenuIndex = -1;
+          showSubmenu(menuItems[currentMenuIndex]);
+        }
+        break;
+
+      case 'ArrowDown':
+        event.preventDefault();
+        if (submenuItems.length > 0 && currentSubmenuIndex < submenuItems.length - 1) {
+          currentSubmenuIndex++;
+          focusSubmenuItem(currentSubmenu, currentSubmenuIndex);
+        }
+        break;
+
+      case 'ArrowUp':
+        event.preventDefault();
+        if (currentSubmenu && currentSubmenuIndex > 0) {
+          currentSubmenuIndex--;
+          focusSubmenuItem(currentSubmenu, currentSubmenuIndex);
+        }
+        break;
+
+      case 'Escape':
+        event.preventDefault();
+        closeAllSubmenus();
+        break;
+    }
+  }
+
+  // Attach the keydown event listener
+  document.addEventListener('keydown', handleKeydown);
+
+  // Attach mouseover event listener to open submenus on hover
+  menuItems.forEach((item, index) => {
+    item.addEventListener('mouseover', () => {
+      currentMenuIndex = index;
+      currentSubmenuIndex = -1;
+      showSubmenu(item);
+    });
+  });
+
+  // Handle mouse click navigation
+  menuItems.forEach((item, index) => {
+    item.addEventListener('click', (event) => {
+      event.preventDefault();
+      if (index < menuItems.length - 1) {
+        currentMenuIndex = index + 1;
+        showSubmenu(menuItems[currentMenuIndex]);
+      } else if (index > 0) {
+        currentMenuIndex = index - 1;
+        showSubmenu(menuItems[currentMenuIndex]);
+      }
+    });
+  });
+});
+
+ //////////////////////////////////////////////////////////////
+// Accessibility related fixes - End
+//////////////////////////////////////////////////////////////
