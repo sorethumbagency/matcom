@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   appendToAriaLabelForSpecificHref('tel:18882628266', 'Call us toll free');
   appendToAriaLabelForSpecificHref('mailto:info@matcom.com', ' Email us');
   appendToAriaLabelForSpecificHref('/', 'Home Page');
+  appendToAriaLabelForSpecificHref('/home', 'Home Page');
   appendToAriaLabelForSpecificHref('/about-matcom', 'About');
   appendToAriaLabelForSpecificHref('/about', 'Our Story');
   appendToAriaLabelForSpecificHref('/safety-and-quality-standards', 'Safety, Training & Quality');
