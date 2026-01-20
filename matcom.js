@@ -128,23 +128,23 @@ window.onload = function() {
 
  
  // Function to add "Error:" after </svg> but before the existing text
-// function addErrorText() {
-    // const errorElements = document.querySelectorAll('.form-field-error');
+function addErrorText() {
+    const errorElements = document.querySelectorAll('.form-field-error');
 
-    // errorElements.forEach(element => {
+    errorElements.forEach(element => {
         // Check if the element contains an <svg> tag and not already has "Error:"
-        // if (element.querySelector('svg') && !element.textContent.includes('Error:')) {
+        if (element.querySelector('svg') && !element.textContent.includes('Error:')) {
             // Create a new text node with the text "Error: "
-            // const errorTextNode = document.createTextNode(' Error: ');
+            const errorTextNode = document.createTextNode(' Error: ');
 
             // Find the SVG element
-            // const svgElement = element.querySelector('svg');
+            const svgElement = element.querySelector('svg');
 
             // Insert the text node after the SVG element
-            // element.insertBefore(errorTextNode, svgElement.nextSibling);
-        // }
-    // });
-// }
+            element.insertBefore(errorTextNode, svgElement.nextSibling);
+        }
+    });
+}
 
 // Create a MutationObserver to watch for changes in the DOM
 // const observer = new MutationObserver((mutationsList, observer) => {
