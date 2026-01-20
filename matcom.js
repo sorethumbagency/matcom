@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Keep accordion folder open in mobile view
-  // const subMenu = document.querySelector('.header-menu-nav-item--accordion-folder>a');
-  // const subMenuContent = document.querySelector('.accordion-folder-content');
-  // if (subMenu && subMenuContent) {
-    // subMenu.classList.add("open");
-    // subMenuContent.style.maxHeight = "226px";
-  // }
+  const subMenu = document.querySelector('.header-menu-nav-item--accordion-folder>a');
+  const subMenuContent = document.querySelector('.accordion-folder-content');
+  if (subMenu && subMenuContent) {
+    subMenu.classList.add("open");
+    subMenuContent.style.maxHeight = "226px";
+  }
 
   // Highlight nested folder header on mouseover
   // const nestedFolderHeader = document.querySelector('.header-nav-item--nested-folder > a');
