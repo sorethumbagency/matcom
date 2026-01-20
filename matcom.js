@@ -113,10 +113,10 @@ instaLinks.forEach(link => {
 };
   
   // give unique landmark to social links on contact page
-  // const contactSocialNav = document.querySelector('#block-e2286f40cc7eefb7dafb nav.sqs-svg-icon--list');
-   // if (contactSocialNav){
-    // contactSocialNav.setAttribute("aria-label", "social media links");
-  // };
+  const contactSocialNav = document.querySelector('#block-e2286f40cc7eefb7dafb nav.sqs-svg-icon--list');
+   if (contactSocialNav){
+    contactSocialNav.setAttribute("aria-label", "social media links");
+  };
 
 //give unique landmark to first map on contact page
 // window.onload = function() {
