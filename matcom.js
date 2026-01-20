@@ -209,52 +209,52 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Handle keyboard navigation
-  // function handleKeydown(event) {
-    // const currentItem = menuItems[currentMenuIndex];
-    // const currentSubmenu = currentItem.parentElement.querySelector('.header-nav-folder-content');
-    // const submenuItems = currentSubmenu ? currentSubmenu.querySelectorAll('.header-nav-folder-item > a') : [];
+  function handleKeydown(event) {
+    const currentItem = menuItems[currentMenuIndex];
+    const currentSubmenu = currentItem.parentElement.querySelector('.header-nav-folder-content');
+    const submenuItems = currentSubmenu ? currentSubmenu.querySelectorAll('.header-nav-folder-item > a') : [];
 
-    // switch (event.key) {
-      // case 'ArrowRight':
-        // event.preventDefault();
-        // if (currentMenuIndex < menuItems.length - 1) {
-          // currentMenuIndex++;
-          // currentSubmenuIndex = -1;
-          // showSubmenu(menuItems[currentMenuIndex]);
-        // }
-        // break;
+    switch (event.key) {
+      case 'ArrowRight':
+        event.preventDefault();
+        if (currentMenuIndex < menuItems.length - 1) {
+          currentMenuIndex++;
+          currentSubmenuIndex = -1;
+          showSubmenu(menuItems[currentMenuIndex]);
+        }
+        break;
 
-      // case 'ArrowLeft':
-        // event.preventDefault();
-        // if (currentMenuIndex > 0) {
-          // currentMenuIndex--;
-          // currentSubmenuIndex = -1;
-          // showSubmenu(menuItems[currentMenuIndex]);
-        // }
-        // break;
+      case 'ArrowLeft':
+        event.preventDefault();
+        if (currentMenuIndex > 0) {
+          currentMenuIndex--;
+          currentSubmenuIndex = -1;
+          showSubmenu(menuItems[currentMenuIndex]);
+        }
+        break;
 
-      // case 'ArrowDown':
-        // event.preventDefault();
-        // if (submenuItems.length > 0 && currentSubmenuIndex < submenuItems.length - 1) {
-          // currentSubmenuIndex++;
-          // focusSubmenuItem(currentSubmenu, currentSubmenuIndex);
-        // }
-        // break;
+      case 'ArrowDown':
+        event.preventDefault();
+        if (submenuItems.length > 0 && currentSubmenuIndex < submenuItems.length - 1) {
+          currentSubmenuIndex++;
+          focusSubmenuItem(currentSubmenu, currentSubmenuIndex);
+        }
+        break;
 
-      // case 'ArrowUp':
-        // event.preventDefault();
-        // if (currentSubmenu && currentSubmenuIndex > 0) {
-          // currentSubmenuIndex--;
-          // focusSubmenuItem(currentSubmenu, currentSubmenuIndex);
-        // }
-        // break;
+      case 'ArrowUp':
+        event.preventDefault();
+        if (currentSubmenu && currentSubmenuIndex > 0) {
+          currentSubmenuIndex--;
+          focusSubmenuItem(currentSubmenu, currentSubmenuIndex);
+        }
+        break;
 
-      // case 'Escape':
-        // event.preventDefault();
-        // closeAllSubmenus();
-        // break;
-    // }
-  // }
+      case 'Escape':
+        event.preventDefault();
+        closeAllSubmenus();
+        break;
+    }
+  }
 
   // Attach the keydown event listener
   // document.addEventListener('keydown', handleKeydown);
