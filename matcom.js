@@ -33,52 +33,52 @@ document.addEventListener("DOMContentLoaded", () => {
 });
   
   // function to add an identical aria-label for all link that have the same href
-     // function appendToAriaLabelForSpecificHref(targetHref, textToAppend) {
+     function appendToAriaLabelForSpecificHref(targetHref, textToAppend) {
             // Select all elements with an href attribute
-            // const elements = document.querySelectorAll('[href]');
+            const elements = document.querySelectorAll('[href]');
 
-            // elements.forEach(element => {
+            elements.forEach(element => {
                 // Check if the element's href matches the target href
-                // if (element.getAttribute('href') === targetHref) {
+                if (element.getAttribute('href') === targetHref) {
                     // Get the current ARIA label
-                    // const currentAriaLabel = element.getAttribute('aria-label');
+                    const currentAriaLabel = element.getAttribute('aria-label');
 
                     // Append the new text to the current ARIA label
-                    // const newAriaLabel = currentAriaLabel ? currentAriaLabel + textToAppend : textToAppend;
+                    const newAriaLabel = currentAriaLabel ? currentAriaLabel + textToAppend : textToAppend;
 
                     // Set the updated ARIA label back to the element
-                    // element.setAttribute('aria-label', newAriaLabel);
-                // }
-            // });
-        // }
+                    element.setAttribute('aria-label', newAriaLabel);
+                }
+            });
+        }
   
-  // appendToAriaLabelForSpecificHref('tel:18882628266', 'Call us toll free');
-  // appendToAriaLabelForSpecificHref('mailto:info@matcom.com', ' Email us');
-  // appendToAriaLabelForSpecificHref('/', 'Home Page');
-  // appendToAriaLabelForSpecificHref('/home', 'Home Page');
-  // appendToAriaLabelForSpecificHref('/about-matcom', 'About');
-  // appendToAriaLabelForSpecificHref('/about', 'Our Story');
-  // appendToAriaLabelForSpecificHref('/safety-and-quality-standards', 'Safety, Training & Quality');
-  // appendToAriaLabelForSpecificHref('/partners-causes', 'Our Partners & Causes');
-  // appendToAriaLabelForSpecificHref('/the-fleet', 'The Fleet');
-  // appendToAriaLabelForSpecificHref('/industries-we-serve', 'Industries We Serve');
-  // appendToAriaLabelForSpecificHref('/services', 'Services');
-  // appendToAriaLabelForSpecificHref('/machinery-moving', 'Machinery Moving');
-  // appendToAriaLabelForSpecificHref('/industrial-service', 'Industrial Service');
-  // appendToAriaLabelForSpecificHref('/warehousing-logistics', 'Warehousing & Logistics');
-  // appendToAriaLabelForSpecificHref('/repairs-upgrades', 'Repairs & Upgrades');
-  // appendToAriaLabelForSpecificHref('/parts-sales', 'Parts & Sales');
-  // appendToAriaLabelForSpecificHref('/fabrication', 'Fabrication');
-  // appendToAriaLabelForSpecificHref('/lubrication-systems', 'Lubrication Systems');
-  // appendToAriaLabelForSpecificHref('/contact-1', 'Contact');
-  // appendToAriaLabelForSpecificHref('/contact', 'Contact Us');
-  // appendToAriaLabelForSpecificHref('/careers', 'Careers');
+  appendToAriaLabelForSpecificHref('tel:18882628266', 'Call us toll free');
+  appendToAriaLabelForSpecificHref('mailto:info@matcom.com', ' Email us');
+  appendToAriaLabelForSpecificHref('/', 'Home Page');
+  appendToAriaLabelForSpecificHref('/home', 'Home Page');
+  appendToAriaLabelForSpecificHref('/about-matcom', 'About');
+  appendToAriaLabelForSpecificHref('/about', 'Our Story');
+  appendToAriaLabelForSpecificHref('/safety-and-quality-standards', 'Safety, Training & Quality');
+  appendToAriaLabelForSpecificHref('/partners-causes', 'Our Partners & Causes');
+  appendToAriaLabelForSpecificHref('/the-fleet', 'The Fleet');
+  appendToAriaLabelForSpecificHref('/industries-we-serve', 'Industries We Serve');
+  appendToAriaLabelForSpecificHref('/services', 'Services');
+  appendToAriaLabelForSpecificHref('/machinery-moving', 'Machinery Moving');
+  appendToAriaLabelForSpecificHref('/industrial-service', 'Industrial Service');
+  appendToAriaLabelForSpecificHref('/warehousing-logistics', 'Warehousing & Logistics');
+  appendToAriaLabelForSpecificHref('/repairs-upgrades', 'Repairs & Upgrades');
+  appendToAriaLabelForSpecificHref('/parts-sales', 'Parts & Sales');
+  appendToAriaLabelForSpecificHref('/fabrication', 'Fabrication');
+  appendToAriaLabelForSpecificHref('/lubrication-systems', 'Lubrication Systems');
+  appendToAriaLabelForSpecificHref('/contact-1', 'Contact');
+  appendToAriaLabelForSpecificHref('/contact', 'Contact Us');
+  appendToAriaLabelForSpecificHref('/careers', 'Careers');
   
   // if the attribute has this href replace instead of appending
- // const instaLinks = document.querySelectorAll('a[href="https://www.instagram.com/matcom1976/"]');
-// instaLinks.forEach(link => {
-    // link.setAttribute('aria-label', 'Instagram');
-// });
+ const instaLinks = document.querySelectorAll('a[href="https://www.instagram.com/matcom1976/"]');
+instaLinks.forEach(link => {
+    link.setAttribute('aria-label', 'Instagram');
+});
   
   // function to append "(opens in a new tab)" to ARIA labels of elements with href target='_blank'
         // function appendToAriaLabelForExternalLinks() {
