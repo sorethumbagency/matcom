@@ -188,17 +188,17 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Function to show the submenu of the current item
-  // function showSubmenu(item) {
-    // closeAllSubmenus(); // Close other submenus
-    // const submenu = item.parentElement.querySelector('.header-nav-folder-content');
-    // if (submenu) {
-      // submenu.style.opacity = '1'; // Ensure visibility of the selected submenu
-      // submenu.style.pointerEvents = 'auto'; // Enable interaction
-      // setNestedSubmenusOpacity(submenu); // Set opacity for nested submenus
-      // currentSubmenuIndex = 0; // Reset submenu index
-      // focusSubmenuItem(submenu, currentSubmenuIndex);
-    // }
-  // }
+  function showSubmenu(item) {
+    closeAllSubmenus(); // Close other submenus
+    const submenu = item.parentElement.querySelector('.header-nav-folder-content');
+    if (submenu) {
+      submenu.style.opacity = '1'; // Ensure visibility of the selected submenu
+      submenu.style.pointerEvents = 'auto'; // Enable interaction
+      setNestedSubmenusOpacity(submenu); // Set opacity for nested submenus
+      currentSubmenuIndex = 0; // Reset submenu index
+      focusSubmenuItem(submenu, currentSubmenuIndex);
+    }
+  }
 
   // Function to focus on a submenu item
   // function focusSubmenuItem(submenu, index) {
