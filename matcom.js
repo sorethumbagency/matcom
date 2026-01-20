@@ -257,30 +257,30 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Attach the keydown event listener
-  // document.addEventListener('keydown', handleKeydown);
+  document.addEventListener('keydown', handleKeydown);
 
   // Attach mouseover event listener to open submenus on hover
-  // menuItems.forEach((item, index) => {
-    // item.addEventListener('mouseover', () => {
-      // currentMenuIndex = index;
-      // currentSubmenuIndex = -1;
-      // showSubmenu(item);
-    // });
-  // });
+  menuItems.forEach((item, index) => {
+    item.addEventListener('mouseover', () => {
+      currentMenuIndex = index;
+      currentSubmenuIndex = -1;
+      showSubmenu(item);
+    });
+  });
 
   // Handle mouse click navigation
-  // menuItems.forEach((item, index) => {
-    // item.addEventListener('click', (event) => {
-      // event.preventDefault();
-      // if (index < menuItems.length - 1) {
-        // currentMenuIndex = index + 1;
-        // showSubmenu(menuItems[currentMenuIndex]);
-      // } else if (index > 0) {
-        // currentMenuIndex = index - 1;
-        // showSubmenu(menuItems[currentMenuIndex]);
-      // }
-    // });
-  // });
+  menuItems.forEach((item, index) => {
+    item.addEventListener('click', (event) => {
+      event.preventDefault();
+      if (index < menuItems.length - 1) {
+        currentMenuIndex = index + 1;
+        showSubmenu(menuItems[currentMenuIndex]);
+      } else if (index > 0) {
+        currentMenuIndex = index - 1;
+        showSubmenu(menuItems[currentMenuIndex]);
+      }
+    });
+  });
 });
 
  //////////////////////////////////////////////////////////////
