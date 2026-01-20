@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     content.outerHTML = `<ul class="${content.className}">${content.innerHTML}</ul>`;
  });
 
-  // document.querySelectorAll(".header-nav-folder-item, .nested-folder .header-nav-folder-item").forEach(item => {
-    // item.outerHTML = `<li class="${item.className}" style="list-style-type: none;">${item.innerHTML}</li>`;
-  // });
+  document.querySelectorAll(".header-nav-folder-item, .nested-folder .header-nav-folder-item").forEach(item => {
+    item.outerHTML = `<li class="${item.className}" style="list-style-type: none;">${item.innerHTML}</li>`;
+  });
 
   // Keep accordion folder open in mobile view
   // const subMenu = document.querySelector('.header-menu-nav-item--accordion-folder>a');
