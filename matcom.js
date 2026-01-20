@@ -107,10 +107,10 @@ instaLinks.forEach(link => {
         appendToAriaLabelForExternalLinks();
   
   // give unique landmark to social links in footer
-  // const footerNav = document.querySelector('footer nav.sqs-svg-icon--list');
-  // if (footerNav) {
-  // footerNav.setAttribute("aria-label", "footer social links menu");
-// };
+  const footerNav = document.querySelector('footer nav.sqs-svg-icon--list');
+  if (footerNav) {
+  footerNav.setAttribute("aria-label", "footer social links menu");
+};
   
   // give unique landmark to social links on contact page
   // const contactSocialNav = document.querySelector('#block-e2286f40cc7eefb7dafb nav.sqs-svg-icon--list');
