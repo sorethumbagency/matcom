@@ -179,13 +179,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Function to set opacity of all nested submenus to 1
-  // function setNestedSubmenusOpacity(submenu) {
-    // const nestedSubmenus = submenu.querySelectorAll('.header-nav-folder-content');
-    // nestedSubmenus.forEach(nested => {
-      // nested.style.opacity = '1';
-      // nested.style.pointerEvents = 'auto'; // Enable interaction if needed
-    // });
-  // }
+  function setNestedSubmenusOpacity(submenu) {
+    const nestedSubmenus = submenu.querySelectorAll('.header-nav-folder-content');
+    nestedSubmenus.forEach(nested => {
+      nested.style.opacity = '1';
+      nested.style.pointerEvents = 'auto'; // Enable interaction if needed
+    });
+  }
 
   // Function to show the submenu of the current item
   // function showSubmenu(item) {
