@@ -119,12 +119,12 @@ instaLinks.forEach(link => {
   };
 
 //give unique landmark to first map on contact page
-// window.onload = function() {
-    // const contactMap = document.querySelector('#block-336fde4c5f3638bc1683 > div > div > div:nth-child(2)');
-    // if (contactMap) {
-        // contactMap.setAttribute("aria-label", "Location Map");
-    // };
-// };
+window.onload = function() {
+    const contactMap = document.querySelector('#block-336fde4c5f3638bc1683 > div > div > div:nth-child(2)');
+    if (contactMap) {
+        contactMap.setAttribute("aria-label", "Location Map");
+    };
+};
 
  
  // Function to add "Error:" after </svg> but before the existing text
