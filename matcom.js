@@ -18,19 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Highlight nested folder header on mouseover
-  // const nestedFolderHeader = document.querySelector('.header-nav-item--nested-folder > a');
-  // if (nestedFolderHeader) {
-    // nestedFolderLinks.forEach(item => {
-      // item.addEventListener('mouseover', () => {
-        // nestedFolderHeader.style.color = "white";
-      // });
+  const nestedFolderHeader = document.querySelector('.header-nav-item--nested-folder > a');
+  if (nestedFolderHeader) {
+    nestedFolderLinks.forEach(item => {
+      item.addEventListener('mouseover', () => {
+        nestedFolderHeader.style.color = "white";
+      });
 
-      // item.addEventListener('mouseout', () => {
-        // nestedFolderHeader.style.color = "";
-      // });
-    // });
-  // }
-// });
+      item.addEventListener('mouseout', () => {
+        nestedFolderHeader.style.color = "";
+      });
+    });
+  }
+});
   
   // function to add an identical aria-label for all link that have the same href
      // function appendToAriaLabelForSpecificHref(targetHref, textToAppend) {
