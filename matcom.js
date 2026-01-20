@@ -201,12 +201,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Function to focus on a submenu item
-  // function focusSubmenuItem(submenu, index) {
-    // const submenuItems = submenu.querySelectorAll('.header-nav-folder-item > a');
-    // if (submenuItems.length > 0 && index >= 0 && index < submenuItems.length) {
-      // submenuItems[index].focus();
-    // }
-  // }
+  function focusSubmenuItem(submenu, index) {
+    const submenuItems = submenu.querySelectorAll('.header-nav-folder-item > a');
+    if (submenuItems.length > 0 && index >= 0 && index < submenuItems.length) {
+      submenuItems[index].focus();
+    }
+  }
 
   // Handle keyboard navigation
   // function handleKeydown(event) {
