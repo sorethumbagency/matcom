@@ -156,27 +156,27 @@ const observer = new MutationObserver((mutationsList, observer) => {
 });
 
 // Start observing the entire document for changes
-// observer.observe(document.body, {
-    // childList: true, // Look for changes to child nodes
-    // subtree: true,   // Observe all nodes, not just direct children
-// });
+observer.observe(document.body, {
+    childList: true, // Look for changes to child nodes
+    subtree: true,   // Observe all nodes, not just direct children
+});
 
 // Call the function initially to handle any existing .form-field-error elements
-// addErrorText();
+addErrorText();
   
-// document.addEventListener('DOMContentLoaded', function () {
-  // const menuItems = document.querySelectorAll('.header-nav-item > a');
-  // let currentMenuIndex = 0;
-  // let currentSubmenuIndex = -1;
+document.addEventListener('DOMContentLoaded', function () {
+  const menuItems = document.querySelectorAll('.header-nav-item > a');
+  let currentMenuIndex = 0;
+  let currentSubmenuIndex = -1;
 
   // Function to close all submenus and set opacity to 0
-  // function closeAllSubmenus() {
-    // const allSubmenus = document.querySelectorAll('.header-nav-folder-content');
-    // allSubmenus.forEach(submenu => {
-      // submenu.style.opacity = '0';
-      // submenu.style.pointerEvents = 'none';
-    // });
-  // }
+  function closeAllSubmenus() {
+    const allSubmenus = document.querySelectorAll('.header-nav-folder-content');
+    allSubmenus.forEach(submenu => {
+      submenu.style.opacity = '0';
+      submenu.style.pointerEvents = 'none';
+    });
+  }
 
   // Function to set opacity of all nested submenus to 1
   // function setNestedSubmenusOpacity(submenu) {
