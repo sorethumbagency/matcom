@@ -81,30 +81,30 @@ instaLinks.forEach(link => {
 });
   
   // function to append "(opens in a new tab)" to ARIA labels of elements with href target='_blank'
-        // function appendToAriaLabelForExternalLinks() {
+        function appendToAriaLabelForExternalLinks() {
             // Select all elements with an href attribute
-            // const elements = document.querySelectorAll('[href]');
+            const elements = document.querySelectorAll('[href]');
 
-            // elements.forEach(element => {
+            elements.forEach(element => {
                 // Check if the element has target='_blank'
-                // if (element.getAttribute('target') === '_blank') {
+                if (element.getAttribute('target') === '_blank') {
                     // Define the text to append
-                    // const textToAppend = ' (opens in a new tab)';
+                    const textToAppend = ' (opens in a new tab)';
 
                     // Get the current ARIA label
-                    // const currentAriaLabel = element.getAttribute('aria-label');
+                    const currentAriaLabel = element.getAttribute('aria-label');
 
                     // Append the new text to the current ARIA label
-                    // const newAriaLabel = currentAriaLabel ? currentAriaLabel + textToAppend : textToAppend;
+                    const newAriaLabel = currentAriaLabel ? currentAriaLabel + textToAppend : textToAppend;
 
                     // Set the updated ARIA label back to the element
-                    // element.setAttribute('aria-label', newAriaLabel);
-                // }
-            // });
-        // }
+                    element.setAttribute('aria-label', newAriaLabel);
+                }
+            });
+        }
 
         // Call the function to execute it
-        // appendToAriaLabelForExternalLinks();
+        appendToAriaLabelForExternalLinks();
   
   // give unique landmark to social links in footer
   // const footerNav = document.querySelector('footer nav.sqs-svg-icon--list');
