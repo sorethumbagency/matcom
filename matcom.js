@@ -147,13 +147,13 @@ function addErrorText() {
 }
 
 // Create a MutationObserver to watch for changes in the DOM
-// const observer = new MutationObserver((mutationsList, observer) => {
-    // for (let mutation of mutationsList) {
-        // if (mutation.type === 'childList' || mutation.type === 'subtree') {
-            // addErrorText(); // Call the function when changes are detected
-        // }
-    // }
-// });
+const observer = new MutationObserver((mutationsList, observer) => {
+    for (let mutation of mutationsList) {
+        if (mutation.type === 'childList' || mutation.type === 'subtree') {
+            addErrorText(); // Call the function when changes are detected
+        }
+    }
+});
 
 // Start observing the entire document for changes
 // observer.observe(document.body, {
