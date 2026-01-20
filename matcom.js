@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
  
   // Convert submenus and sub-submenus to lists 
-  // document.querySelectorAll(".header-nav-folder-content, .nested-folder.header-nav-folder-content").forEach(content => {
-    // content.outerHTML = `<ul class="${content.className}">${content.innerHTML}</ul>`;
- // });
+  document.querySelectorAll(".header-nav-folder-content, .nested-folder.header-nav-folder-content").forEach(content => {
+    content.outerHTML = `<ul class="${content.className}">${content.innerHTML}</ul>`;
+ });
 
   // document.querySelectorAll(".header-nav-folder-item, .nested-folder .header-nav-folder-item").forEach(item => {
     // item.outerHTML = `<li class="${item.className}" style="list-style-type: none;">${item.innerHTML}</li>`;
