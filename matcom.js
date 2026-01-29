@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Highlight nested folder header on mouseover
   const nestedFolderHeader = document.querySelector('.header-nav-item--nested-folder > a');
   if (nestedFolderHeader) {
-    nestedFolderLinks.forEach(item => {
-      item.addEventListener('mouseover', () => {
-        nestedFolderHeader.style.color = "white";
-      });
+   // nestedFolderLinks.forEach(item => {
+      //item.addEventListener('mouseover', () => {
+        //nestedFolderHeader.style.color = "white";
+      //});
 
       item.addEventListener('mouseout', () => {
         nestedFolderHeader.style.color = "";
